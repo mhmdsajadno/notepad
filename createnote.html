@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Taking App</title>
+    <style>
+      * {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #fff; /* Set default text color to white */
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000; /* Black background */
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border: 1px solid #fff; /* White border */
+        border-radius: 10px;
+        background-color: #000; /* Black background */
+        color: #fff; /* White text color */
+        width: 60%;
+        max-width: 600px;
+      }
+
+      input,
+      textarea,
+      select {
+        margin: 10px 0;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #fff; /* White border */
+        border-radius: 5px;
+        background-color: #000; /* Black background */
+        color: #fff; /* White text color */
+      }
+
+      input[type="submit"] {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: rebeccapurple; /* White background */
+        color: #fff; /* Black text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover,
+      input[type="button"]:hover {
+        background-color: #555;
+      }
+      #discard {
+        margin-top: 0;
+        background-color: #000;
+        border: none;
+        color: rebeccapurple;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm" action="db-notes.php" method="post">
+      <h1>..:: Taking Note ::..</h1>
+      <br />
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" id="subject" />
+
+      <label for="note">Note</label>
+      <textarea name="note" id="note" rows="6"></textarea>
+
+      <!-- <label for="tags">Tags</label>
+        <input type="text" name="tags" id="tags" placeholder="Enter tags separated by commas">
+
+        <label for="priority">Priority</label>
+        <select name="priority" id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <label for="due-date">Due Date</label>
+        <input type="datetime-local" name="due-date" id="due-date"> -->
+
+      <input type="submit" value="Submit" />
+      <input id="discard" type="button" value="Discard" />
+    </form>
+
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          // event.preventDefault(); // Prevent the default form submission
+          // Redirect to index.php/
+          window.location.href = "index.php";
+        });
+    </script>
+  </body>
+</html>
